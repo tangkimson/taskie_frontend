@@ -390,6 +390,25 @@ const PaymentProofUpload = ({ taskId, onSuccess }) => {
     <div className="space-y-4">
       <ErrorMessage message={error} />
 
+      {/* Bank Transfer Information */}
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+        <h3 className="text-lg font-semibold text-gray-900 mb-3">Thông tin chuyển khoản</h3>
+        <div className="space-y-2">
+          <div className="flex items-center">
+            <span className="text-sm font-medium text-gray-700 w-32">Ngân hàng:</span>
+            <span className="text-sm text-gray-900">MB Bank</span>
+          </div>
+          <div className="flex items-center">
+            <span className="text-sm font-medium text-gray-700 w-32">Tên tài khoản:</span>
+            <span className="text-sm text-gray-900">Tăng Kim Sơn</span>
+          </div>
+          <div className="flex items-center">
+            <span className="text-sm font-medium text-gray-700 w-32">Số tài khoản:</span>
+            <span className="text-sm text-gray-900 font-mono">3039999303</span>
+          </div>
+        </div>
+      </div>
+
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Payment Proof (Transaction Screenshot)
