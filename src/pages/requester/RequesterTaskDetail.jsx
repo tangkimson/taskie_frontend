@@ -177,7 +177,7 @@ const RequesterTaskDetail = () => {
                 <button
                   onClick={() => setShowCompleteConfirm(true)}
                   disabled={completing}
-                  className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50"
+                  className="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors disabled:opacity-50"
                 >
                   {completing ? 'Completing...' : '✅ Complete Task'}
                 </button>
@@ -364,7 +364,7 @@ const RequesterTaskDetail = () => {
           message="Are you sure you want to mark this task as completed? This action cannot be undone."
           confirmText="Yes, Complete Task"
           cancelText="Cancel"
-          confirmButtonClass="bg-green-500 hover:bg-green-600"
+          confirmButtonClass="bg-indigo-500 hover:bg-indigo-600"
           isLoading={completing}
         />
       </div>
