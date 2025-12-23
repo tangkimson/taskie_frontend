@@ -7,7 +7,7 @@ import Layout from '../../components/Layout';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import ErrorMessage from '../../components/ErrorMessage';
 import SuccessMessage from '../../components/SuccessMessage';
-import api from '../../utils/api';
+import api, { getBaseURL } from '../../utils/api';
 
 const TaskerProfile = () => {
   const { user, updateUser } = useAuth();
@@ -191,7 +191,7 @@ const TaskerProfile = () => {
             <div className="w-24 h-24 rounded-full bg-gray-200 overflow-hidden">
               {user?.avatarUrl ? (
                 <img
-                  src={`http://localhost:5000${user.avatarUrl}`}
+                  src={`${getBaseURL()}${user.avatarUrl}`}
                   alt="Avatar"
                   className="w-full h-full object-cover"
                 />

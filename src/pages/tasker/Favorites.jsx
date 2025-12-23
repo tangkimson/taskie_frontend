@@ -8,7 +8,7 @@ import LoadingSpinner from '../../components/LoadingSpinner';
 import ErrorMessage from '../../components/ErrorMessage';
 import SuccessMessage from '../../components/SuccessMessage';
 import ConfirmDialog from '../../components/ConfirmDialog';
-import api from '../../utils/api';
+import api, { getBaseURL } from '../../utils/api';
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
@@ -108,7 +108,7 @@ const Favorites = () => {
                       {/* Task image */}
                       {favorite.taskId.images && favorite.taskId.images.length > 0 && (
                         <img
-                          src={`http://localhost:5000${favorite.taskId.images[0]}`}
+                          src={`${getBaseURL()}${favorite.taskId.images[0]}`}
                           alt={favorite.taskId.title}
                           className="w-full h-48 object-cover rounded-lg mb-4"
                           onError={(e) => {

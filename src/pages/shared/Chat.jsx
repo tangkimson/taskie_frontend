@@ -8,7 +8,7 @@ import Layout from '../../components/Layout';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import ErrorMessage from '../../components/ErrorMessage';
 import BackButton from '../../components/BackButton';
-import api from '../../utils/api';
+import api, { getBaseURL } from '../../utils/api';
 
 const Chat = () => {
   const { taskId, userId } = useParams();
@@ -130,7 +130,7 @@ const Chat = () => {
                 <div className="w-10 h-10 rounded-full bg-white overflow-hidden flex-shrink-0">
                   {otherUser?.avatarUrl ? (
                     <img
-                      src={`http://localhost:5000${otherUser.avatarUrl}`}
+                      src={`${getBaseURL()}${otherUser.avatarUrl}`}
                       alt={otherUser.fullName}
                       className="w-full h-full object-cover"
                     />
@@ -197,7 +197,7 @@ const Chat = () => {
                           {showAvatar ? (
                             otherUser?.avatarUrl ? (
                               <img
-                                src={`http://localhost:5000${otherUser.avatarUrl}`}
+                                src={`${getBaseURL()}${otherUser.avatarUrl}`}
                                 alt={otherUser.fullName}
                                 className="w-full h-full object-cover"
                               />
@@ -232,7 +232,7 @@ const Chat = () => {
                           {showAvatar ? (
                             user?.avatarUrl ? (
                               <img
-                                src={`http://localhost:5000${user.avatarUrl}`}
+                                src={`${getBaseURL()}${user.avatarUrl}`}
                                 alt={user.fullName}
                                 className="w-full h-full object-cover"
                               />

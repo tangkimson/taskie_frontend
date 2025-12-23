@@ -232,11 +232,14 @@ const CreateTask = () => {
                   className="input-field"
                   disabled={loading}
                 >
-                  {locations.map(loc => (
-                    <option key={loc._id} value={loc.province}>
-                      {loc.province}
-                    </option>
-                  ))}
+                  <option value="">Select Province/City</option>
+                  {locations
+                    .filter(loc => loc.province && loc.province.trim() !== '' && loc.province !== 'All Provinces/Cities')
+                    .map(loc => (
+                      <option key={loc._id} value={loc.province}>
+                        {loc.province}
+                      </option>
+                    ))}
                 </select>
               </div>
 

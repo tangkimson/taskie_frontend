@@ -62,5 +62,10 @@ api.interceptors.response.use(
   }
 );
 
+// Utility function to get base URL for static assets (images, etc.)
+export const getBaseURL = () => {
+  return import.meta.env.VITE_API_URL || 'http://localhost:5000';
+};
+
 export default api;
 

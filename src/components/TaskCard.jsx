@@ -2,6 +2,7 @@
 // Displays a task in card format
 
 import { Link } from 'react-router-dom';
+import { getBaseURL } from '../utils/api';
 
 const TaskCard = ({ task, linkPath, showStatus = true }) => {
   // Format date
@@ -40,7 +41,7 @@ const TaskCard = ({ task, linkPath, showStatus = true }) => {
         {/* Task image */}
         {task.images && task.images.length > 0 && (
           <img
-            src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${task.images[0]}`}
+            src={`${getBaseURL()}${task.images[0]}`}
             alt={task.title}
             className="w-full h-48 object-cover rounded-lg mb-4"
             onError={(e) => {

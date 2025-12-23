@@ -9,7 +9,7 @@ import ErrorMessage from '../../components/ErrorMessage';
 import SuccessMessage from '../../components/SuccessMessage';
 import ConfirmDialog from '../../components/ConfirmDialog';
 import BackButton from '../../components/BackButton';
-import api from '../../utils/api';
+import api, { getBaseURL } from '../../utils/api';
 
 const RequesterTaskDetail = () => {
   const { id } = useParams();
@@ -207,7 +207,7 @@ const RequesterTaskDetail = () => {
               {task.images.map((img, index) => (
                 <img
                   key={index}
-                  src={`http://localhost:5000${img}`}
+                  src={`${getBaseURL()}${img}`}
                   alt={`Task ${index + 1}`}
                   className="w-full h-48 object-cover rounded-lg"
                   onError={(e) => {
@@ -258,7 +258,7 @@ const RequesterTaskDetail = () => {
               </div>
               {showPaymentProof && (
                 <img
-                  src={`http://localhost:5000${task.paymentProofUrl}`}
+                  src={`${getBaseURL()}${task.paymentProofUrl}`}
                   alt="Payment Proof"
                   className="w-full max-w-md h-auto rounded-lg"
                   onError={(e) => {

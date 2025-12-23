@@ -23,5 +23,18 @@ cd taskie-frontend
 npm install
 npm run dev       # Development server (http://localhost:5173)
 npm run build     # Production build
-npm run preview   # Preview production build### Environment
-Update API base URL in `src/utils/api.js` to match your backend URL.
+npm run preview   # Preview production build### Environment Variables
+
+The app uses `VITE_API_URL` environment variable for the backend API URL.
+
+**For local development:**
+- Create `.env.local` file (already created, ignored by git):
+  ```env
+  VITE_API_URL=http://localhost:5000
+  ```
+
+**For production:**
+- Set `VITE_API_URL` in your hosting platform (Vercel)
+- Example: `https://taskie-backend-kh69.onrender.com`
+
+**Note:** The code automatically uses `VITE_API_URL` from environment variables. If not set, it defaults to `http://localhost:5000`.

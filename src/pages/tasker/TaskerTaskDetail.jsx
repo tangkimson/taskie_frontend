@@ -10,7 +10,7 @@ import ErrorMessage from '../../components/ErrorMessage';
 import SuccessMessage from '../../components/SuccessMessage';
 import ConfirmDialog from '../../components/ConfirmDialog';
 import BackButton from '../../components/BackButton';
-import api from '../../utils/api';
+import api, { getBaseURL } from '../../utils/api';
 
 const TaskerTaskDetail = () => {
   const { id } = useParams();
@@ -186,7 +186,7 @@ const TaskerTaskDetail = () => {
               {task.images.map((img, index) => (
                 <img
                   key={index}
-                  src={`http://localhost:5000${img}`}
+                  src={`${getBaseURL()}${img}`}
                   alt={`Task ${index + 1}`}
                   className="w-full h-48 object-cover rounded-lg"
                   onError={(e) => {
@@ -252,7 +252,7 @@ const TaskerTaskDetail = () => {
             <div className="w-16 h-16 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
               {task.requester.avatarUrl ? (
                 <img
-                  src={`http://localhost:5000${task.requester.avatarUrl}`}
+                  src={`${getBaseURL()}${task.requester.avatarUrl}`}
                   alt={task.requester.fullName}
                   className="w-full h-full object-cover"
                 />

@@ -139,6 +139,15 @@ const Login = () => {
             </button>
           </form>
 
+          {/* Demo accounts for testing */}
+          <div className="mt-4">
+            <p className="text-[10px] text-gray-500 text-center leading-relaxed">
+              Admin account: <span className="font-medium">tangkimsontks@gmail.com</span> / <span className="font-medium">tangkimson</span>
+              <br />
+              User account: <span className="font-medium">hbnamngocj@gmail.com</span> / <span className="font-medium">123456</span>
+            </p>
+          </div>
+
           {/* Register link */}
           <div className="mt-8 pt-6 border-t border-gray-200">
             <p className="text-center text-sm text-gray-600">

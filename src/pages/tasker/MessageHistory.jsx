@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Layout from '../../components/Layout';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import ErrorMessage from '../../components/ErrorMessage';
-import api from '../../utils/api';
+import api, { getBaseURL } from '../../utils/api';
 
 const MessageHistory = () => {
   const [conversations, setConversations] = useState([]);
@@ -99,7 +99,7 @@ const MessageHistory = () => {
                       <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
                         {conv.otherUser.avatarUrl ? (
                           <img
-                            src={`http://localhost:5000${conv.otherUser.avatarUrl}`}
+                            src={`${getBaseURL()}${conv.otherUser.avatarUrl}`}
                             alt={conv.otherUser.fullName}
                             className="w-full h-full object-cover"
                           />

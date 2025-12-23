@@ -174,11 +174,13 @@ const TaskerSearch = () => {
                 className="input-field"
               >
                 <option value="">All Provinces/Cities</option>
-                {locations.map(loc => (
-                  <option key={loc._id} value={loc.province}>
-                    {loc.province}
-                  </option>
-                ))}
+                {locations
+                  .filter(loc => loc.province && loc.province.trim() !== '' && loc.province !== 'All Provinces/Cities')
+                  .map(loc => (
+                    <option key={loc._id} value={loc.province}>
+                      {loc.province}
+                    </option>
+                  ))}
               </select>
 
               {/* Ward */}
