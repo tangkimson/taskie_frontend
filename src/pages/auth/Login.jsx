@@ -139,12 +139,10 @@ const Login = () => {
             </button>
           </form>
 
-          {/* Demo accounts for testing */}
+          {/* Demo account for testing */}
           <div className="mt-4">
             <p className="text-[10px] text-gray-500 text-center leading-relaxed">
-              Admin account: <span className="font-medium">tangkimsontks@gmail.com</span> / <span className="font-medium">tangkimson</span>
-              <br />
-              User account: <span className="font-medium">hbnamngocj@gmail.com</span> / <span className="font-medium">123456</span>
+              Admin account: <span className="font-medium">admin@taskie.com</span> / <span className="font-medium">password123</span>
             </p>
           </div>
 
